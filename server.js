@@ -31,11 +31,6 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(requestIp.mw());
 
-app.use(function(req, res) {
-  const ip = req.clientIp;
-  res.end(ip);
-});
-
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.static(path.join(__dirname, '/client/build')));
